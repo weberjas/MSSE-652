@@ -14,11 +14,17 @@
 
 @implementation SecondViewController
 
+/**
+ * Run when the view loads
+ */
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
 
+/**
+ *  Run when memory warning recieved
+ */
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
