@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[ProgramsTableViewController parser:didEndElement:namespaceURI:qualifiedName:]:ProgramsTableViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "programArray">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ProgramsTableViewController connectionDidFinishLoading:]:ProgramsTableViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_responseData">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
