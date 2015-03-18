@@ -18,6 +18,7 @@
 		391327DB1AA4CFB6009EAFA9 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 391327DA1AA4CFB6009EAFA9 /* FirstViewController.m */; };
 		391327DE1AA4CFCA009EAFA9 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 391327DD1AA4CFCA009EAFA9 /* SecondViewController.m */; };
 		39F35AAF1AAE6A6600978BD8 /* ProgramsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F35AAE1AAE6A6600978BD8 /* ProgramsTableViewController.m */; };
+		760C9860F1FADD5819CAAF93 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8FB35639B37E5137C4CAFE3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20F0D2287BED26CF584421ED /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		391327AD1AA4CE80009EAFA9 /* MSSE 652.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MSSE 652.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		391327B11AA4CE80009EAFA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		391327B21AA4CE80009EAFA9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -51,6 +53,8 @@
 		391327DD1AA4CFCA009EAFA9 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		39F35AAD1AAE6A6600978BD8 /* ProgramsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramsTableViewController.h; sourceTree = "<group>"; };
 		39F35AAE1AAE6A6600978BD8 /* ProgramsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramsTableViewController.m; sourceTree = "<group>"; };
+		8D32CA435395311F17696630 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		E8FB35639B37E5137C4CAFE3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				760C9860F1FADD5819CAAF93 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +82,8 @@
 				391327AF1AA4CE80009EAFA9 /* MSSE 652 */,
 				391327CC1AA4CE80009EAFA9 /* MSSE 652Tests */,
 				391327AE1AA4CE80009EAFA9 /* Products */,
+				8C8310AB5E5E354B0A5E773B /* Pods */,
+				ABE4D270AA04E6ADA5DF03D3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +144,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		8C8310AB5E5E354B0A5E773B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				20F0D2287BED26CF584421ED /* Pods.debug.xcconfig */,
+				8D32CA435395311F17696630 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		ABE4D270AA04E6ADA5DF03D3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E8FB35639B37E5137C4CAFE3 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,9 +168,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 391327D31AA4CE80009EAFA9 /* Build configuration list for PBXNativeTarget "MSSE 652" */;
 			buildPhases = (
+				43845D5F728B0B709F929270 /* Check Pods Manifest.lock */,
 				391327A91AA4CE80009EAFA9 /* Sources */,
 				391327AA1AA4CE80009EAFA9 /* Frameworks */,
 				391327AB1AA4CE80009EAFA9 /* Resources */,
+				6E2BA856C2C3FB6F42F5EAFA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -231,6 +257,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		43845D5F728B0B709F929270 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6E2BA856C2C3FB6F42F5EAFA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		391327A91AA4CE80009EAFA9 /* Sources */ = {
@@ -363,6 +422,7 @@
 		};
 		391327D41AA4CE80009EAFA9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20F0D2287BED26CF584421ED /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "MSSE 652/Info.plist";
@@ -373,6 +433,7 @@
 		};
 		391327D51AA4CE80009EAFA9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D32CA435395311F17696630 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "MSSE 652/Info.plist";
