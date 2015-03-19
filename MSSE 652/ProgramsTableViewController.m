@@ -5,8 +5,10 @@
 //  Created by Jason Weber on 3/9/15.
 //  Copyright (c) 2015 msse652. All rights reserved.
 //
+// AFNetworking: http://www.raywenderlich.com/59255/afnetworking-2-0-tutorial
 
 #import "ProgramsTableViewController.h"
+#import "AFNetworking.h"
 
 @interface ProgramsTableViewController ()
 
@@ -32,8 +34,29 @@ NSMutableString *classId = nil;
     NSURL *url =[NSURL URLWithString: @"http://regisscis.net/Regis2/webresources/regis2.program"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"GET"];
-    [[NSURLConnection alloc] initWithRequest:request delegate:self];
     
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    operation.responseSerializer = [AFXMLParserResponseSerializer serializer];
+    
+    [operation
+        setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *requestOperation, id responseObject) {
+            
+            NSLog(@"Successful Reponse, start processing!");
+            
+            // create a new parser and set this controller to be the delegate called after parsing completes
+            NSXMLParser *parser = (NSXMLParser *)responseObject;
+            [parser setShouldProcessNamespaces:YES];
+            [parser setDelegate:self];
+            [parser parse];
+        
+        }
+        failure:^(AFHTTPRequestOperation *requestOperation, NSError *error) {
+            NSLog(@"Request Failed! %@", error);
+        }
+     ];
+    
+    // run the operation to load from the URL
+    [operation start];
 }
 
 /**
@@ -78,79 +101,6 @@ NSMutableString *classId = nil;
     return cell;
 }
 
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-/* Implement the NSURLConnectionDelegate Methods */
-
-/**
- *  Recieved a response from the server
- *
- *  @param connection  NSURLConnection
- *  @param response    NSURLResponse
- */
-- (void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-    _responseData = [[NSMutableData alloc] init];
-}
-
-/**
- *  Data received from the server
- *
- *  @param connection NSURLConnection
- *  @param data       NSData
- */
-- (void) connection:(NSURLConnection *) connection didReceiveData:(NSData *)data {
-    [_responseData appendData:data];
-}
-
-/**
- *  Response Caching
- *
- *  @param connection     NSURLConnection
- *  @param cachedResponse NSCachedURLResponse
- *
- *  @return <#return value description#>
- */
-- (NSCachedURLResponse *) connection: (NSURLConnection *) connection willCacheResponse:(NSCachedURLResponse *)cachedResponse {
-    return nil;
-}
-
-
-/**
- *  Process data after the connection is finished loading data from the server.
- *  Using this as a template: http://www.appcoda.com/ios-programming-rss-reader-tutorial/
- *
- *  @param connection NSURLConnection
- */
-- (void) connectionDidFinishLoading:(NSURLConnection *) connection {
-    
-    NSLog(@"Finised loading data");
-    
-    xmlParser = [[NSXMLParser alloc] initWithData:_responseData];
-    [xmlParser setDelegate:self];
-    [xmlParser setShouldResolveExternalEntities:NO];
-    [xmlParser parse];
-    
-}
-
-/**
- *  connection failed
- *
- *  @param connection <#connection description#>
- *  @param error      <#error description#>
- */
-- (void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-    NSLog(@"Server connection failed: %@", error);
-}
 
 /* Implement the NSXMLParser Delegate Methods */
 

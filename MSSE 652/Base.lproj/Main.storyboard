@@ -112,7 +112,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Ld4-v5-riR">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellIdentifier" id="Ld4-v5-riR">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ld4-v5-riR" id="DUF-lt-S4V">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -215,7 +215,7 @@
         <scene sceneID="k2X-ob-Ctm">
             <objects>
                 <navigationController title="SCIS Programs" id="VoT-ql-Rd1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Nav" id="BNd-OM-IwU"/>
+                    <tabBarItem key="tabBarItem" title="Programs" id="BNd-OM-IwU"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KBD-zX-3bI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

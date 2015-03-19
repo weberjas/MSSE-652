@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ProgramsTableViewController : UITableViewController
-                                            <UITableViewDelegate, UITableViewDataSource, NSURLConnectionDelegate, NSXMLParserDelegate>
+                                            <UITableViewDelegate, UITableViewDataSource, NSXMLParserDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
