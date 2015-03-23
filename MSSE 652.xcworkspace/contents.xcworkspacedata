@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:MSSE 652.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+   <Group
+      location = "group:"
+      name = "">
+      <Group
+         location = "group:MSSE 652"
+         name = "MSSE 652">
+         <FileRef
+            location = "group:AppDelegate.h">
+         </FileRef>
+         <FileRef
+            location = "group:AppDelegate.m">
+         </FileRef>
+         <Group
+            location = "group:Base.lproj"
+            name = "Base.lproj">
+            <FileRef
+               location = "group:LaunchScreen.xib">
+            </FileRef>
+            <FileRef
+               location = "group:Main.storyboard">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:FirstViewController.h">
+         </FileRef>
+         <FileRef
+            location = "group:FirstViewController.m">
+         </FileRef>
+         <Group
+            location = "group:Images.xcassets"
+            name = "Images.xcassets">
+            <Group
+               location = "group:AppIcon.appiconset"
+               name = "AppIcon.appiconset">
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+            </Group>
+         </Group>
+         <FileRef
+            location = "group:Info.plist">
+         </FileRef>
+         <FileRef
+            location = "group:main.m">
+         </FileRef>
+         <FileRef
+            location = "group:MSSE_652.xcdatamodeld">
+         </FileRef>
+         <FileRef
+            location = "group:ProgramsTableViewController.h">
+         </FileRef>
+         <FileRef
+            location = "group:ProgramsTableViewController.m">
+         </FileRef>
+         <FileRef
+            location = "group:SecondViewController.h">
+         </FileRef>
+         <FileRef
+            location = "group:SecondViewController.m">
+         </FileRef>
+         <FileRef
+            location = "group:ViewController.h">
+         </FileRef>
+         <FileRef
+            location = "group:ViewController.m">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:MSSE 652.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:MSSE 652.xcworkspace">
+      </FileRef>
+      <Group
+         location = "group:MSSE 652Tests"
+         name = "MSSE 652Tests">
+         <FileRef
+            location = "group:Info.plist">
+         </FileRef>
+         <FileRef
+            location = "group:MSSE_652Tests.m">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Pods"
+         name = "Pods">
+         <Group
+            location = "group:Local Podspecs"
+            name = "Local Podspecs">
+         </Group>
+      </Group>
+      <FileRef
+         location = "group:Project Status.docx">
+      </FileRef>
+      <FileRef
+         location = "group:README.md">
+      </FileRef>
+   </Group>
+</Workspace>
