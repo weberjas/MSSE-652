@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "ArticleList.h"
 #import "Article.h"
+#import "ArticleViewController.h"
 
 @interface ProgramsTableViewController ()
 
@@ -69,7 +70,9 @@
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         Article *article = self.articles[indexPath.row];
-        [[segue destinationViewController] setDetailItem:article.summary];
+        
+        ArticleViewController *destController = [segue destinationViewController];
+        [destController setArticle: article];
     }
 }
 

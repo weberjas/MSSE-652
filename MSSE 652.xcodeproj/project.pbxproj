@@ -19,6 +19,7 @@
 		391327DE1AA4CFCA009EAFA9 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 391327DD1AA4CFCA009EAFA9 /* SecondViewController.m */; };
 		3940FAFD1AC62FED0052D7D0 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 3940FAFC1AC62FED0052D7D0 /* Article.m */; };
 		3940FB001AC62FED0052D7D0 /* ArticleList.m in Sources */ = {isa = PBXBuildFile; fileRef = 3940FAFF1AC62FED0052D7D0 /* ArticleList.m */; };
+		3986D3FB1AC63FCA00AC1EB0 /* ArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3986D3FA1AC63FCA00AC1EB0 /* ArticleViewController.m */; };
 		39F35AAF1AAE6A6600978BD8 /* ProgramsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F35AAE1AAE6A6600978BD8 /* ProgramsTableViewController.m */; };
 		F416C79E7EEBCF9C4F437861 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 835C056288AAC0158A0D6EE1 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -57,6 +58,8 @@
 		3940FAFC1AC62FED0052D7D0 /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
 		3940FAFE1AC62FED0052D7D0 /* ArticleList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleList.h; sourceTree = "<group>"; };
 		3940FAFF1AC62FED0052D7D0 /* ArticleList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleList.m; sourceTree = "<group>"; };
+		3986D3F91AC63FCA00AC1EB0 /* ArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleViewController.h; sourceTree = "<group>"; };
+		3986D3FA1AC63FCA00AC1EB0 /* ArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleViewController.m; sourceTree = "<group>"; };
 		39F35AAD1AAE6A6600978BD8 /* ProgramsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramsTableViewController.h; sourceTree = "<group>"; };
 		39F35AAE1AAE6A6600978BD8 /* ProgramsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramsTableViewController.m; sourceTree = "<group>"; };
 		835C056288AAC0158A0D6EE1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,9 +133,11 @@
 				3940FAFF1AC62FED0052D7D0 /* ArticleList.m */,
 				3940FAFB1AC62FED0052D7D0 /* Article.h */,
 				3940FAFC1AC62FED0052D7D0 /* Article.m */,
-				391327B01AA4CE80009EAFA9 /* Supporting Files */,
 				39F35AAD1AAE6A6600978BD8 /* ProgramsTableViewController.h */,
 				39F35AAE1AAE6A6600978BD8 /* ProgramsTableViewController.m */,
+				3986D3F91AC63FCA00AC1EB0 /* ArticleViewController.h */,
+				3986D3FA1AC63FCA00AC1EB0 /* ArticleViewController.m */,
+				391327B01AA4CE80009EAFA9 /* Supporting Files */,
 			);
 			path = "MSSE 652";
 			sourceTree = "<group>";
@@ -311,6 +316,7 @@
 				3940FB001AC62FED0052D7D0 /* ArticleList.m in Sources */,
 				391327DE1AA4CFCA009EAFA9 /* SecondViewController.m in Sources */,
 				391327B91AA4CE80009EAFA9 /* MSSE_652.xcdatamodeld in Sources */,
+				3986D3FB1AC63FCA00AC1EB0 /* ArticleViewController.m in Sources */,
 				391327B61AA4CE80009EAFA9 /* AppDelegate.m in Sources */,
 				391327DB1AA4CFB6009EAFA9 /* FirstViewController.m in Sources */,
 				391327BC1AA4CE80009EAFA9 /* ViewController.m in Sources */,
