@@ -7,6 +7,9 @@
 //
 
 #import "ProgramsTableViewController.h"
+#import "AppDelegate.h"
+#import "ArticleList.h"
+#import "Article.h"
 
 @interface ProgramsTableViewController ()
 
@@ -14,13 +17,6 @@
 
 @implementation ProgramsTableViewController
 
-NSMutableArray *programArray = nil;
-NSMutableData *_responseData = nil;
-NSXMLParser *xmlParser = nil;
-NSMutableDictionary *item = nil;
-NSString *element = nil;
-NSMutableString *className = nil;
-NSMutableString *classId = nil;
 
 /**
  *  viewDidLoad method
@@ -28,11 +24,7 @@ NSMutableString *classId = nil;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    programArray = [[NSMutableArray alloc] init];
-    NSURL *url =[NSURL URLWithString: @"http://regisscis.net/Regis2/webresources/regis2.program"];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    [request setHTTPMethod:@"GET"];
-    [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    [self requestData];
     
 }
 
@@ -68,147 +60,66 @@ NSMutableString *classId = nil;
  */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [programArray count];
+    return [self.articles count];
 }
 
+#pragma mark - Segues
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        Article *article = self.articles[indexPath.row];
+        [[segue destinationViewController] setDetailItem:article.summary];
+    }
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellIdentifier" forIndexPath:indexPath];
-    cell.textLabel.text = [[programArray objectAtIndex:indexPath.row] objectForKey: @"name"];
+    
+    Article *article = [self.articles objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = article.title;
+    
     return cell;
 }
 
 
+#pragma mark - RESTKit
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-/* Implement the NSURLConnectionDelegate Methods */
-
-/**
- *  Recieved a response from the server
- *
- *  @param connection  NSURLConnection
- *  @param response    NSURLResponse
- */
-- (void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-    _responseData = [[NSMutableData alloc] init];
-}
-
-/**
- *  Data received from the server
- *
- *  @param connection NSURLConnection
- *  @param data       NSData
- */
-- (void) connection:(NSURLConnection *) connection didReceiveData:(NSData *)data {
-    [_responseData appendData:data];
-}
-
-/**
- *  Response Caching
- *
- *  @param connection     NSURLConnection
- *  @param cachedResponse NSCachedURLResponse
- *
- *  @return <#return value description#>
- */
-- (NSCachedURLResponse *) connection: (NSURLConnection *) connection willCacheResponse:(NSCachedURLResponse *)cachedResponse {
-    return nil;
-}
-
-
-/**
- *  Process data after the connection is finished loading data from the server.
- *  Using this as a template: http://www.appcoda.com/ios-programming-rss-reader-tutorial/
- *
- *  @param connection NSURLConnection
- */
-- (void) connectionDidFinishLoading:(NSURLConnection *) connection {
+- (void)requestData {
     
-    NSLog(@"Finised loading data");
+    NSString *requestPath = @"/v1/categories/16/articles.json";
     
-    xmlParser = [[NSXMLParser alloc] initWithData:_responseData];
-    [xmlParser setDelegate:self];
-    [xmlParser setShouldResolveExternalEntities:NO];
-    [xmlParser parse];
+    [[RKObjectManager sharedManager]
+     getObjectsAtPath:requestPath
+     parameters:nil
+     success: ^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+         //articles have been saved in core data by now
+         [self fetchArticlesFromContext];
+     }
+     failure: ^(RKObjectRequestOperation *operation, NSError *error) {
+         RKLogError(@"Load failed with error: %@", error);
+     }
+     ];
     
 }
 
-/**
- *  connection failed
- *
- *  @param connection <#connection description#>
- *  @param error      <#error description#>
- */
-- (void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-    NSLog(@"Server connection failed: %@", error);
-}
-
-/* Implement the NSXMLParser Delegate Methods */
-
-/**
- * Called when a new xml element is encountered
- */
-- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
+- (void)fetchArticlesFromContext {
     
-    element = elementName;
+    NSManagedObjectContext *context = [RKManagedObjectStore defaultStore].mainQueueManagedObjectContext;
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"ArticleList"];
     
-    if ([element isEqualToString:@"program"]) {
-        
-        item        = [[NSMutableDictionary alloc] init];
-        className   = [[NSMutableString alloc] init];
-        classId     = [[NSMutableString alloc] init];
-        
-    }
+    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES];
+    fetchRequest.sortDescriptors = @[descriptor];
     
-}
-
-/**
- * Called for every character encountered within an XML tag
- *
- */
-- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
+    NSError *error = nil;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     
-    if ([element isEqualToString:@"name"]) {
-        [className appendString:string];
-    } else if ([element isEqualToString:@"id"]) {
-        [classId appendString:string];
-    }
+    ArticleList *articleList = [fetchedObjects firstObject];
     
-}
-
-/**
- * Called when the end tag of an XML element is reached
- *
- */
-- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
-    
-    if ([elementName isEqualToString:@"program"]) {
-        
-        [item setObject:className forKey:@"name"];
-        [item setObject:classId forKey:@"id"];
-        
-        [programArray addObject:[item copy]];
-        
-    }
-    
-}
-
-/**
- * Called when the parser reaches the end of the document
- */
-- (void)parserDidEndDocument:(NSXMLParser *)parser {
+    self.articles = [articleList.articles allObjects];
     
     [self.tableView reloadData];
-    NSLog(@"Reloading tableView Data");
+    
 }
-
 @end

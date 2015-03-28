@@ -17,7 +17,10 @@
 		391327D01AA4CE80009EAFA9 /* MSSE_652Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 391327CF1AA4CE80009EAFA9 /* MSSE_652Tests.m */; };
 		391327DB1AA4CFB6009EAFA9 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 391327DA1AA4CFB6009EAFA9 /* FirstViewController.m */; };
 		391327DE1AA4CFCA009EAFA9 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 391327DD1AA4CFCA009EAFA9 /* SecondViewController.m */; };
+		3940FAFD1AC62FED0052D7D0 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 3940FAFC1AC62FED0052D7D0 /* Article.m */; };
+		3940FB001AC62FED0052D7D0 /* ArticleList.m in Sources */ = {isa = PBXBuildFile; fileRef = 3940FAFF1AC62FED0052D7D0 /* ArticleList.m */; };
 		39F35AAF1AAE6A6600978BD8 /* ProgramsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F35AAE1AAE6A6600978BD8 /* ProgramsTableViewController.m */; };
+		F416C79E7EEBCF9C4F437861 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 835C056288AAC0158A0D6EE1 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		097130390AF3AA09CA6FADBA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		391327AD1AA4CE80009EAFA9 /* MSSE 652.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MSSE 652.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		391327B11AA4CE80009EAFA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		391327B21AA4CE80009EAFA9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -49,8 +53,14 @@
 		391327DA1AA4CFB6009EAFA9 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		391327DC1AA4CFCA009EAFA9 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		391327DD1AA4CFCA009EAFA9 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		3940FAFB1AC62FED0052D7D0 /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
+		3940FAFC1AC62FED0052D7D0 /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
+		3940FAFE1AC62FED0052D7D0 /* ArticleList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleList.h; sourceTree = "<group>"; };
+		3940FAFF1AC62FED0052D7D0 /* ArticleList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleList.m; sourceTree = "<group>"; };
 		39F35AAD1AAE6A6600978BD8 /* ProgramsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramsTableViewController.h; sourceTree = "<group>"; };
 		39F35AAE1AAE6A6600978BD8 /* ProgramsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramsTableViewController.m; sourceTree = "<group>"; };
+		835C056288AAC0158A0D6EE1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEF8CE64692998A5A53356A6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F416C79E7EEBCF9C4F437861 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,12 +82,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22EE467CC3FDEC8E5BAA626C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				097130390AF3AA09CA6FADBA /* Pods.debug.xcconfig */,
+				BEF8CE64692998A5A53356A6 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		391327A41AA4CE80009EAFA9 = {
 			isa = PBXGroup;
 			children = (
 				391327AF1AA4CE80009EAFA9 /* MSSE 652 */,
 				391327CC1AA4CE80009EAFA9 /* MSSE 652Tests */,
 				391327AE1AA4CE80009EAFA9 /* Products */,
+				22EE467CC3FDEC8E5BAA626C /* Pods */,
+				9DC45381094240755E371BC0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,6 +126,10 @@
 				391327C01AA4CE80009EAFA9 /* Images.xcassets */,
 				391327C21AA4CE80009EAFA9 /* LaunchScreen.xib */,
 				391327B71AA4CE80009EAFA9 /* MSSE_652.xcdatamodeld */,
+				3940FAFE1AC62FED0052D7D0 /* ArticleList.h */,
+				3940FAFF1AC62FED0052D7D0 /* ArticleList.m */,
+				3940FAFB1AC62FED0052D7D0 /* Article.h */,
+				3940FAFC1AC62FED0052D7D0 /* Article.m */,
 				391327B01AA4CE80009EAFA9 /* Supporting Files */,
 				39F35AAD1AAE6A6600978BD8 /* ProgramsTableViewController.h */,
 				39F35AAE1AAE6A6600978BD8 /* ProgramsTableViewController.m */,
@@ -137,6 +163,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9DC45381094240755E371BC0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				835C056288AAC0158A0D6EE1 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,9 +178,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 391327D31AA4CE80009EAFA9 /* Build configuration list for PBXNativeTarget "MSSE 652" */;
 			buildPhases = (
+				CAC31DB2FF88D2529D40324A /* Check Pods Manifest.lock */,
 				391327A91AA4CE80009EAFA9 /* Sources */,
 				391327AA1AA4CE80009EAFA9 /* Frameworks */,
 				391327AB1AA4CE80009EAFA9 /* Resources */,
+				51FDA4E0D868ED247CE2E963 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -232,12 +268,47 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		51FDA4E0D868ED247CE2E963 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CAC31DB2FF88D2529D40324A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		391327A91AA4CE80009EAFA9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3940FAFD1AC62FED0052D7D0 /* Article.m in Sources */,
 				39F35AAF1AAE6A6600978BD8 /* ProgramsTableViewController.m in Sources */,
+				3940FB001AC62FED0052D7D0 /* ArticleList.m in Sources */,
 				391327DE1AA4CFCA009EAFA9 /* SecondViewController.m in Sources */,
 				391327B91AA4CE80009EAFA9 /* MSSE_652.xcdatamodeld in Sources */,
 				391327B61AA4CE80009EAFA9 /* AppDelegate.m in Sources */,
@@ -363,6 +434,7 @@
 		};
 		391327D41AA4CE80009EAFA9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 097130390AF3AA09CA6FADBA /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "MSSE 652/Info.plist";
@@ -373,6 +445,7 @@
 		};
 		391327D51AA4CE80009EAFA9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEF8CE64692998A5A53356A6 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "MSSE 652/Info.plist";

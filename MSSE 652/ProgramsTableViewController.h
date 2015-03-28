@@ -12,5 +12,6 @@
                                             <UITableViewDelegate, UITableViewDataSource, NSURLConnectionDelegate, NSXMLParserDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property NSArray *articles;
 
 @end
