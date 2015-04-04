@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cZu-bs-jWm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cZu-bs-jWm">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
@@ -76,10 +76,10 @@
             </objects>
             <point key="canvasLocation" x="1038" y="59"/>
         </scene>
-        <!--Tasks-->
+        <!--Social-->
         <scene sceneID="NLJ-3Z-syW">
             <objects>
-                <viewController id="rya-3d-ElO" sceneMemberID="viewController">
+                <viewController id="rya-3d-ElO" customClass="SocialViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ca1-mQ-Noc"/>
                         <viewControllerLayoutGuide type="bottom" id="T9w-gZ-TxM"/>
@@ -88,20 +88,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tasks" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nL9-zu-TIx">
-                                <rect key="frame" x="278" y="28" width="44" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Social Interactions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nL9-zu-TIx">
+                                <rect key="frame" x="229" y="28" width="142" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="129" y="28" width="142" height="21"/>
+                                </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yEE-xx-UUC">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="    Tweet" image="twitter">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="64" width="108" height="42"/>
+                                </variation>
+                                <connections>
+                                    <action selector="updateTwitterBtn:" destination="rya-3d-ElO" eventType="touchUpInside" id="6Jv-E8-YMW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zg4-Fl-urA">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="    Update Status" image="facebook">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="114" width="179" height="40"/>
+                                </variation>
+                                <connections>
+                                    <action selector="updateFacebookBtn:" destination="rya-3d-ElO" eventType="touchUpInside" id="qhk-hr-K41"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="yEE-xx-UUC"/>
+                                <exclude reference="Zg4-Fl-urA"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="yEE-xx-UUC"/>
+                                <include reference="Zg4-Fl-urA"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Tasks" id="hIq-W5-db7"/>
+                    <tabBarItem key="tabBarItem" title="Social" id="hIq-W5-db7"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PZH-wE-bxn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="260" y="1519"/>
+            <point key="canvasLocation" x="259.5" y="1519"/>
         </scene>
         <!--SCIS Courses-->
         <scene sceneID="84o-M0-m6Q">
@@ -229,4 +270,8 @@
             <point key="canvasLocation" x="245" y="2248"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="facebook" width="40" height="40"/>
+        <image name="twitter" width="40" height="40"/>
+    </resources>
 </document>
