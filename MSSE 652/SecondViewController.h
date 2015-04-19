@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SocketSvc.h"
 
-@interface SecondViewController : UIViewController
+@interface SecondViewController : UIViewController <NSStreamDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *chatMessageText;
+@property (weak, nonatomic) IBOutlet UITextView *chatMessages;
+- (IBAction)sendMessageBtn:(id)sender;
+
+@property SocketSvc *socketSvc;
 
 @end

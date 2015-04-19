@@ -1,30 +1,24 @@
 //
-//  SecondViewController.m
+//  CloudNotesViewController.m
 //  MSSE 652
 //
-//  Created by Jason Weber on 3/2/15.
+//  Created by Jason Weber on 4/11/15.
 //  Copyright (c) 2015 msse652. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "CloudNotesViewController.h"
 
-@interface SecondViewController ()
+@interface CloudNotesViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation CloudNotesViewController
 
-/**
- * Run when the view loads
- */
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
 
-/**
- *  Run when memory warning recieved
- */
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -40,11 +34,6 @@
 }
 */
 
-- (IBAction)sendMessageBtn:(id)sender {
-    
-    [self.socketSvc send:[@"msg:" stringByAppendingString:self.chatMessageText.text]];
-    NSString *chatMessages = [self.chatMessages.text stringByAppendingString:[self.socketSvc retrieve]];
-    
-    self.chatMessages.text = chatMessages;
+- (IBAction)saveBtn:(id)sender {
 }
 @end

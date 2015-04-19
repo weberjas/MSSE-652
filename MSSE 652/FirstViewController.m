@@ -7,6 +7,8 @@
 //
 
 #import "FirstViewController.h"
+#import "SecondViewController.h"
+#import "SocketSvc.h"
 
 @interface FirstViewController ()
 
@@ -14,12 +16,25 @@
 
 @implementation FirstViewController
 
--(IBAction)exitHere:(UIStoryboardSegue *)sender {
+SocketSvc *socketSvc = nil;
+
+- (IBAction)joinBtn:(id)sender {
     
+    socketSvc = [[SocketSvc alloc] init];
+    
+    NSString *connectString = [NSString stringWithFormat:@"iam:%@", self.chatUserText.text];
+    [socketSvc connect:connectString];
+    
+    //[self performSegueWithIdentifier:@"FromFirstToSecond" sender:sender];
+    
+
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+
+    
     // Do any additional setup after loading the view.
 }
 
@@ -28,14 +43,16 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+ SecondViewController *destViewController = segue.destinationViewController;
+ 
+ destViewController.socketSvc = socketSvc;
 }
-*/
+
 
 @end

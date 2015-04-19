@@ -11,6 +11,6 @@
 @interface ProgramsTableViewController : UITableViewController
                                             <UITableViewDelegate, UITableViewDataSource, NSXMLParserDelegate>
 
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
+//@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end

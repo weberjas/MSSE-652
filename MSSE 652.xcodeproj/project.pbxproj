@@ -17,8 +17,10 @@
 		391327D01AA4CE80009EAFA9 /* MSSE_652Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 391327CF1AA4CE80009EAFA9 /* MSSE_652Tests.m */; };
 		391327DB1AA4CFB6009EAFA9 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 391327DA1AA4CFB6009EAFA9 /* FirstViewController.m */; };
 		391327DE1AA4CFCA009EAFA9 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 391327DD1AA4CFCA009EAFA9 /* SecondViewController.m */; };
+		392C750D1AE044960074B697 /* SocketSvc.m in Sources */ = {isa = PBXBuildFile; fileRef = 392C750C1AE044960074B697 /* SocketSvc.m */; };
 		398088421ACC8DAA003847AB /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 398088411ACC8DAA003847AB /* Social.framework */; };
 		398088451ACC8FDB003847AB /* SocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 398088441ACC8FDB003847AB /* SocialViewController.m */; };
+		39AA0FDA1AD9901400FF897F /* CloudNotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AA0FD91AD9901400FF897F /* CloudNotesViewController.m */; };
 		39F35AAF1AAE6A6600978BD8 /* ProgramsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F35AAE1AAE6A6600978BD8 /* ProgramsTableViewController.m */; };
 		760C9860F1FADD5819CAAF93 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8FB35639B37E5137C4CAFE3 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -53,9 +55,13 @@
 		391327DA1AA4CFB6009EAFA9 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		391327DC1AA4CFCA009EAFA9 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		391327DD1AA4CFCA009EAFA9 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		392C750B1AE044960074B697 /* SocketSvc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketSvc.h; sourceTree = "<group>"; };
+		392C750C1AE044960074B697 /* SocketSvc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketSvc.m; sourceTree = "<group>"; };
 		398088411ACC8DAA003847AB /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		398088431ACC8FDB003847AB /* SocialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialViewController.h; sourceTree = "<group>"; };
 		398088441ACC8FDB003847AB /* SocialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialViewController.m; sourceTree = "<group>"; };
+		39AA0FD81AD9901400FF897F /* CloudNotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CloudNotesViewController.h; sourceTree = "<group>"; };
+		39AA0FD91AD9901400FF897F /* CloudNotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloudNotesViewController.m; sourceTree = "<group>"; };
 		39F35AAD1AAE6A6600978BD8 /* ProgramsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramsTableViewController.h; sourceTree = "<group>"; };
 		39F35AAE1AAE6A6600978BD8 /* ProgramsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramsTableViewController.m; sourceTree = "<group>"; };
 		8D32CA435395311F17696630 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -105,7 +111,10 @@
 		391327AF1AA4CE80009EAFA9 /* MSSE 652 */ = {
 			isa = PBXGroup;
 			children = (
+				392C750A1AE044330074B697 /* model */,
 				391327BD1AA4CE80009EAFA9 /* Main.storyboard */,
+				39AA0FD81AD9901400FF897F /* CloudNotesViewController.h */,
+				39AA0FD91AD9901400FF897F /* CloudNotesViewController.m */,
 				398088431ACC8FDB003847AB /* SocialViewController.h */,
 				398088441ACC8FDB003847AB /* SocialViewController.m */,
 				391327D91AA4CFB6009EAFA9 /* FirstViewController.h */,
@@ -150,6 +159,15 @@
 				391327CE1AA4CE80009EAFA9 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		392C750A1AE044330074B697 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				392C750B1AE044960074B697 /* SocketSvc.h */,
+				392C750C1AE044960074B697 /* SocketSvc.m */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 		8C8310AB5E5E354B0A5E773B /* Pods */ = {
@@ -221,6 +239,7 @@
 				TargetAttributes = {
 					391327AC1AA4CE80009EAFA9 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = UW83BM4L8V;
 					};
 					391327C81AA4CE80009EAFA9 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -306,7 +325,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				39F35AAF1AAE6A6600978BD8 /* ProgramsTableViewController.m in Sources */,
+				39AA0FDA1AD9901400FF897F /* CloudNotesViewController.m in Sources */,
 				391327DE1AA4CFCA009EAFA9 /* SecondViewController.m in Sources */,
+				392C750D1AE044960074B697 /* SocketSvc.m in Sources */,
 				391327B91AA4CE80009EAFA9 /* MSSE_652.xcdatamodeld in Sources */,
 				398088451ACC8FDB003847AB /* SocialViewController.m in Sources */,
 				391327B61AA4CE80009EAFA9 /* AppDelegate.m in Sources */,
@@ -371,6 +392,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -412,6 +434,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -426,7 +449,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				VALIDATE_PRODUCT = YES;
+				VALIDATE_PRODUCT = NO;
 			};
 			name = Release;
 		};
@@ -435,9 +458,12 @@
 			baseConfigurationReference = 20F0D2287BED26CF584421ED /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "MSSE 652/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -446,9 +472,12 @@
 			baseConfigurationReference = 8D32CA435395311F17696630 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "MSSE 652/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

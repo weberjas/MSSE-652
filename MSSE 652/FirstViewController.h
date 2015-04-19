@@ -10,6 +10,9 @@
 
 @interface FirstViewController : UIViewController
 
--(IBAction)exitHere:(UIStoryboardSegue *)sender;
+@property (weak, nonatomic) IBOutlet UITextField *chatUserText;
+
+
+- (IBAction)joinBtn:(id)sender;
 
 @end
