@@ -13,6 +13,7 @@
 NSInputStream *inputStream;
 NSOutputStream *outputStream;
 
+
 - (void) connect: (NSString *) msg {
     
     CFReadStreamRef readStream;
@@ -65,6 +66,48 @@ NSOutputStream *outputStream;
     return outputMessage;
 }
 
+- (void)stream:(NSStream *)theStream handleEvent:(NSStreamEvent)streamEvent {
+    
+    switch (streamEvent) {
+            
+        case NSStreamEventOpenCompleted:
+            NSLog(@"Stream opened");
+            break;
+            
+        case NSStreamEventHasBytesAvailable:
+            
+            if (theStream == inputStream) {
+                
+                uint8_t buffer[1024];
+                int len;
+                
+                while ([inputStream hasBytesAvailable]) {
+                    len = (int)[inputStream read:buffer maxLength:sizeof(buffer)];
+                    if (len > 0) {
+                        
+                        NSString *output = [[NSString alloc] initWithBytes:buffer length:len encoding:NSASCIIStringEncoding];
+                        
+                        if (nil != output) {
+                            self.outputTextView.text = [self.outputTextView.text stringByAppendingString:output];
+                            NSLog(@"server said: %@", output);
+                        }
+                    }
+                }
+            }
+            break;
+            
+        case NSStreamEventErrorOccurred:
+            NSLog(@"Can not connect to the host!");
+            break;
+            
+        case NSStreamEventEndEncountered:
+            break;
+            
+        default:
+            NSLog(@"Unknown event");
+    }
+    
+}
 
 - (void) disconnect {
     

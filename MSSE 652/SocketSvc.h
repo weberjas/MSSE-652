@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface SocketSvc : NSObject <NSStreamDelegate>
+
+@property UITextView *outputTextView;
 
 - (void) connect: (NSString *) msg;
 - (void) send: (NSString *)msg;

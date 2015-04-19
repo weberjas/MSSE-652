@@ -19,6 +19,9 @@
  */
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.socketSvc setOutputTextView:self.chatMessages];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -43,8 +46,8 @@
 - (IBAction)sendMessageBtn:(id)sender {
     
     [self.socketSvc send:[@"msg:" stringByAppendingString:self.chatMessageText.text]];
-    NSString *chatMessages = [self.chatMessages.text stringByAppendingString:[self.socketSvc retrieve]];
+    //NSString *chatMessages = [self.chatMessages.text stringByAppendingString:[self.socketSvc retrieve]];
     
-    self.chatMessages.text = chatMessages;
+    //self.chatMessages.text = chatMessages;
 }
 @end
