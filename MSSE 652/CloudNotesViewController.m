@@ -14,9 +14,31 @@
 
 @implementation CloudNotesViewController
 
+NSUbiquitousKeyValueStore *store = nil;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    store = [NSUbiquitousKeyValueStore defaultStore];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(storeDidChange:) name:NSUbiquitousKeyValueStoreDidChangeExternallyNotification object:store];
+    
+    [[NSUbiquitousKeyValueStore defaultStore] synchronize];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didAddNewNote:) name:@"New Note" object:nil];
+    
+    self.notesTextArea.text = [store stringForKey:@"MY_NOTES"];
+}
+
+- (void) didAddNewNote: (NSNotification *)notification {
+    NSDictionary *userInfo = [notification userInfo];
+    NSString *noteString = [userInfo valueForKey:@"Note"];
+    
+    [[NSUbiquitousKeyValueStore defaultStore] setString:noteString forKey:@"MY_NOTES"];
+    
+}
+
+- (void) storeDidChange: (NSNotification *) notification {
+    NSLog(@"StoreDidChange Called!");
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,5 +57,14 @@
 */
 
 - (IBAction)saveBtn:(id)sender {
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"New Note" object:self userInfo:[NSDictionary dictionaryWithObject:self.notesTextArea.text forKey:@"Note"]];
+}
+
+- (IBAction)refreshBtn:(id)sender {
+    self.notesTextArea.text = @"";
+    [[NSUbiquitousKeyValueStore defaultStore] synchronize];
+    self.notesTextArea.text = [store stringForKey:@"MY_NOTES"];
+
 }
 @end

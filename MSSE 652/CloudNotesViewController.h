@@ -10,6 +10,10 @@
 
 @interface CloudNotesViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextView *notesTextArea;
+@property NSMutableArray *notes;
+
 - (IBAction)saveBtn:(id)sender;
+- (IBAction)refreshBtn:(id)sender;
+
 
 @end

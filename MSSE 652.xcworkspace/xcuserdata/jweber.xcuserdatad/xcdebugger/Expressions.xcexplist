@@ -3,10 +3,26 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[CloudNotesViewController didAddNewNote:]:CloudNotesViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.notes">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[SRWebSocket send:]:SRWebSocket.m">
          <PersistentStrings>
             <PersistentString
                value = "self.readyState">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CloudNotesViewController viewDidLoad]:CloudNotesViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.notes">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
