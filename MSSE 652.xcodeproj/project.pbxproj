@@ -21,6 +21,7 @@
 		398088421ACC8DAA003847AB /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 398088411ACC8DAA003847AB /* Social.framework */; };
 		398088451ACC8FDB003847AB /* SocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 398088441ACC8FDB003847AB /* SocialViewController.m */; };
 		39AA0FDA1AD9901400FF897F /* CloudNotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AA0FD91AD9901400FF897F /* CloudNotesViewController.m */; };
+		39E07F5D1AE7E658001708D0 /* libPods-SocketRocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39E07F5C1AE7E658001708D0 /* libPods-SocketRocket.a */; };
 		39F35AAF1AAE6A6600978BD8 /* ProgramsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F35AAE1AAE6A6600978BD8 /* ProgramsTableViewController.m */; };
 		760C9860F1FADD5819CAAF93 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8FB35639B37E5137C4CAFE3 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -60,8 +61,10 @@
 		398088411ACC8DAA003847AB /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		398088431ACC8FDB003847AB /* SocialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialViewController.h; sourceTree = "<group>"; };
 		398088441ACC8FDB003847AB /* SocialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialViewController.m; sourceTree = "<group>"; };
+		39A7254C1AE6E72300F5C44C /* libPods-SocketRocket.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-SocketRocket.a"; path = "Pods/../build/Debug-iphoneos/libPods-SocketRocket.a"; sourceTree = "<group>"; };
 		39AA0FD81AD9901400FF897F /* CloudNotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CloudNotesViewController.h; sourceTree = "<group>"; };
 		39AA0FD91AD9901400FF897F /* CloudNotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloudNotesViewController.m; sourceTree = "<group>"; };
+		39E07F5C1AE7E658001708D0 /* libPods-SocketRocket.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-SocketRocket.a"; path = "Pods/../build/Debug-iphoneos/libPods-SocketRocket.a"; sourceTree = "<group>"; };
 		39F35AAD1AAE6A6600978BD8 /* ProgramsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramsTableViewController.h; sourceTree = "<group>"; };
 		39F35AAE1AAE6A6600978BD8 /* ProgramsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramsTableViewController.m; sourceTree = "<group>"; };
 		8D32CA435395311F17696630 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -73,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39E07F5D1AE7E658001708D0 /* libPods-SocketRocket.a in Frameworks */,
 				398088421ACC8DAA003847AB /* Social.framework in Frameworks */,
 				760C9860F1FADD5819CAAF93 /* libPods.a in Frameworks */,
 			);
@@ -182,6 +186,8 @@
 		ABE4D270AA04E6ADA5DF03D3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				39E07F5C1AE7E658001708D0 /* libPods-SocketRocket.a */,
+				39A7254C1AE6E72300F5C44C /* libPods-SocketRocket.a */,
 				398088411ACC8DAA003847AB /* Social.framework */,
 				E8FB35639B37E5137C4CAFE3 /* libPods.a */,
 			);
@@ -461,9 +467,15 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "MSSE 652/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -475,9 +487,15 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "MSSE 652/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

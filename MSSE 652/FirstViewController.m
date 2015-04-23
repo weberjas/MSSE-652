@@ -18,17 +18,6 @@
 
 SocketSvc *socketSvc = nil;
 
-- (IBAction)joinBtn:(id)sender {
-    
-    socketSvc = [[SocketSvc alloc] init];
-    
-    NSString *connectString = [NSString stringWithFormat:@"iam:%@", self.chatUserText.text];
-    [socketSvc connect:connectString];
-    
-    //[self performSegueWithIdentifier:@"FromFirstToSecond" sender:sender];
-    
-
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -51,7 +40,8 @@ SocketSvc *socketSvc = nil;
     
  SecondViewController *destViewController = segue.destinationViewController;
  
- destViewController.socketSvc = socketSvc;
+ destViewController.userName = self.chatUserText.text;
+    
 }
 
 

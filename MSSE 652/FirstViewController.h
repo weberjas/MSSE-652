@@ -8,11 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface FirstViewController : UIViewController 
 
 @property (weak, nonatomic) IBOutlet UITextField *chatUserText;
-
-
-- (IBAction)joinBtn:(id)sender;
 
 @end

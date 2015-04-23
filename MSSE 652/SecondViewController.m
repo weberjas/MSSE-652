@@ -7,12 +7,15 @@
 //
 
 #import "SecondViewController.h"
+#import "SRWebSocket.h"
 
-@interface SecondViewController ()
+@interface SecondViewController () <SRWebSocketDelegate>
 
 @end
 
 @implementation SecondViewController
+
+SRWebSocket *_webSocket = nil;
 
 /**
  * Run when the view loads
@@ -20,9 +23,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.socketSvc setOutputTextView:self.chatMessages];
+    //_webSocket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"ws://localhost:9000/chat"]]];
+    _webSocket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"ws://www.regisscis.net:80/WebSocketServer/chat"]]];
+    _webSocket.delegate = self;
     
-    // Do any additional setup after loading the view.
+    [_webSocket open];
+    NSLog(@"Socket should be open");
 }
 
 /**
@@ -45,9 +51,30 @@
 
 - (IBAction)sendMessageBtn:(id)sender {
     
-    [self.socketSvc send:[@"msg:" stringByAppendingString:self.chatMessageText.text]];
-    //NSString *chatMessages = [self.chatMessages.text stringByAppendingString:[self.socketSvc retrieve]];
+    [_webSocket send:self.chatMessageText.text];
     
-    //self.chatMessages.text = chatMessages;
+
+}
+
+- (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message{
+    NSString *incomingMessage = (NSString *)message;
+    
+    NSString *chatMessages = [[self.chatMessages.text stringByAppendingString:@"\n"] stringByAppendingString:incomingMessage];
+    
+    self.chatMessages.text = chatMessages;
+}
+
+- (void) webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error {
+    NSLog(@"Opening Failed! : %@", error);
+}
+
+- (void) webSocketDidOpen:(SRWebSocket *)webSocket {
+    NSLog(@"Web Socket Opened!");
+
+}
+
+- (IBAction)sendPing:(id)sender {
+    
+    [_webSocket send:@"Testing"];
 }
 @end

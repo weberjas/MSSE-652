@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cZu-bs-jWm">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
@@ -32,6 +33,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="152" y="49" width="97" height="30"/>
                                 </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="xae-r6-WPl" id="mPi-hf-kpd"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="guQ-5p-Hij">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -42,8 +46,7 @@
                                     <rect key="frame" x="185" y="87" width="30" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="joinBtn:" destination="UaE-TN-E4c" eventType="touchUpInside" id="T63-TF-QWM"/>
-                                    <segue destination="Lye-PK-9an" kind="show" id="AsK-bf-qkc"/>
+                                    <segue destination="Lye-PK-9an" kind="show" id="0bR-V1-hyn"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -99,41 +102,55 @@
                                     <rect key="frame" x="16" y="60" width="273" height="30"/>
                                 </variation>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Sf-D9-Zho">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Send">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="338" y="60" width="36" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="sendMessageBtn:" destination="Lye-PK-9an" eventType="touchUpInside" id="MIa-78-Y1C"/>
-                                </connections>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bLu-HR-gU8">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="98" width="368" height="432"/>
+                                    <rect key="frame" x="16" y="174" width="368" height="356"/>
                                 </variation>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgW-mX-6A4">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Ping Server">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="22" y="136" width="80" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="sendPing:" destination="Lye-PK-9an" eventType="touchUpInside" id="i4C-3o-uno"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Sf-D9-Zho">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Send">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="22" y="98" width="36" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="sendMessageBtn:" destination="Lye-PK-9an" eventType="touchUpInside" id="MIa-78-Y1C"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="6jB-3Z-Rdw"/>
-                                <exclude reference="4Sf-D9-Zho"/>
                                 <exclude reference="bLu-HR-gU8"/>
+                                <exclude reference="lgW-mX-6A4"/>
+                                <exclude reference="4Sf-D9-Zho"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="6jB-3Z-Rdw"/>
-                                <include reference="4Sf-D9-Zho"/>
                                 <include reference="bLu-HR-gU8"/>
+                                <include reference="lgW-mX-6A4"/>
+                                <include reference="4Sf-D9-Zho"/>
                             </mask>
                         </variation>
                     </view>
@@ -318,9 +335,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <segue destination="rya-3d-ElO" kind="relationship" relationship="viewControllers" id="SSo-XW-O7b"/>
                         <segue destination="UaE-TN-E4c" kind="relationship" relationship="viewControllers" id="Onh-LY-w6t"/>
                         <segue destination="rwr-c6-fNf" kind="relationship" relationship="viewControllers" id="gqi-5Z-Dtn"/>
-                        <segue destination="rya-3d-ElO" kind="relationship" relationship="viewControllers" id="SSo-XW-O7b"/>
                         <segue destination="VoT-ql-Rd1" kind="relationship" relationship="viewControllers" id="ZY3-m8-n5T"/>
                     </connections>
                 </tabBarController>
